@@ -1,0 +1,196 @@
+/* Custom styles */
+:root {
+  --clr-primary: hsl(179, 62%, 43%);
+  --clr-primary-light: hsl(179, 62%, 46%);
+  --clr-secondary: hsl(71, 73%, 54%);
+
+  --clr-light: hsl(204, 43%, 93%);
+  --clr-gray: hsl(218, 22%, 67%);
+}
+
+/* ### Primary
+
+- Cyan: hsl(179, 62%, 43%)
+- Bright Yellow: hsl(71, 73%, 54%)
+
+### Neutral
+
+- Light Gray: hsl(204, 43%, 93%)
+- Grayish Blue: hsl(218, 22%, 67%) */
+
+/* /Custom styles */
+
+/* Resets */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  min-height: 100vh;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* /Resets */
+
+/* General */
+body {
+  font-family: 'Karla', 'sans-serif';
+  font-size: 1rem;
+  background-color: var(--clr-light);
+
+  display: grid;
+  place-content: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* /General */
+
+/* Card */
+.card {
+  margin: 1rem;
+  background-color: white;
+  max-width: 350px;
+  border-radius: 6px;
+  display: grid;
+}
+
+.card__item {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card__item-1 h1 {
+  color: var(--clr-primary);
+}
+
+.card__item-1 p:first-of-type {
+  color: var(--clr-secondary);
+  font-weight: bold;
+}
+
+.card__item-1 p:last-of-type {
+  color: var(--clr-gray);
+  font-weight: bold;
+}
+
+.card__item-2 {
+  background-color: var(--clr-primary);
+  color: var(--clr-light);
+}
+
+.price p:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price p:first-of-type span:first-of-type {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.price p:first-of-type span:last-of-type {
+  opacity: 0.9;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  background-color: var(--clr-secondary);
+  color: white;
+}
+
+.card__item-3 {
+  background-color: var(--clr-primary-light);
+  color: var(--clr-light);
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+@media (min-width: 600px) {
+  .card {
+    max-width: 700px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card__item {
+    justify-content: space-between;
+  }
+
+  .card__item-1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .card__item-2 {
+    border-bottom-left-radius: 6px;
+  }
+
+  .card__item-3 {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 6px;
+  }
+}
